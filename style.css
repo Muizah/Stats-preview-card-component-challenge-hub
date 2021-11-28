@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Lexend+Deca&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --very_dark_blue: hsl(233, 47%, 7%);
+  --dark_desaturated_blue: hsl(244, 38%, 16%);
+  --soft_violet: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --slightly_transparent_white_main_paragraph: hsla(0, 0%, 100%, 0.75);
+  --slightly_transparent_white_stat_headings: hsla(0, 0%, 100%, 0.6);
+
+  --padding_desktop: 50px 60px;
+  --padding_mobile: 10px 20px;
+}
+body {
+  background-color: var(--very_dark_blue);
+  color: var(--white);
+  font-family: "Lexend Deca", sans-serif;
+}
+.container {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.box.box1 {
+  background-color: var(--dark_desaturated_blue);
+  padding: var(--padding_desktop);
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 90%;
+  border-radius: 10px 0 0 10px;
+}
+img {
+  width: 100%;
+}
+.box {
+  width: 100%;
+}
+.box.box2 {
+  background: url(images/image-header-desktop.jpg), var(--soft_violet);
+  border-radius: 0 10px 10px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+p {
+  font-family: "Inter", sans-serif;
+  color: var(--slightly_transparent_white_main_paragraph);
+}
+h1 span {
+  color: var(--soft_violet);
+}
+.statbox h3 {
+  color: var(--white);
+}
+.stat {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 460px) {
+  .container {
+    flex-direction: column-reverse;
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: translate(0, 0);
+    width: 100%;
+    padding: 50px 10px;
+  }
+  .box.box1 {
+    padding: var(--padding_mobile);
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    gap: 2rem;
+    text-align: center;
+  }
+  .box.box2 {
+    height: 250px;
+    border-radius: 10px 10px 0 0;
+  }
+  .stat {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+}
